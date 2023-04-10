@@ -1,0 +1,19 @@
+{
+  "name": "chat-con-soketio",
+  "version": "1.0.0",
+  "description": "proyecto chat con soket io",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon server/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "eduard colmenares",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "soket.io": "^0.0.1-security"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}
