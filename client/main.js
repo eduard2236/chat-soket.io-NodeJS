@@ -19,15 +19,22 @@ function render(data){
 }
 
 function addMessage(e){
+    var span= document.getElementById('alerta');
+    if(document.getElementById('nickname').value == ''||document.getElementById('nickname').value == null){
+        span.style.display='block';
+        return false
+    }else{
+        span.style.display='none';
+        var message= {
+            nickname: document.getElementById('nickname').value+' dice :',
+            text: document.getElementById('text').value
+        };
+        ocultaAlias();
+        socket.emit('add-message', message);
+        document.getElementById('text').value = "";
+        return false;
+    }
     
-    var message= {
-        nickname: document.getElementById('nickname').value,
-        text: document.getElementById('text').value
-    };
-    document.getElementById('nickname').style.display='none'
-    socket.emit('add-message', message);
-    document.getElementById('text').value = "";
-    return false;
 }
 function pulsar(e){
     if (e.keyCode === 13) {
@@ -35,3 +42,7 @@ function pulsar(e){
         document.getElementById("enviar").click();
     }
 }
+function ocultaAlias(){
+    document.getElementById('nickname').style.display='none'
+}
+

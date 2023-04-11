@@ -1,37 +1,34 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chat con Socket IO y NodeJS</title>
+    <link rel="stylesheet" href="styles.css">
     <script type="text/javascript" src="/socket.io/socket.io.js"></script>
-    <script src="main.js"></script>
-    <style>
-        #messages{
-            width: 95%;
-            max-width: 400px;
-            height: 350px;
-            overflow-y: scroll;
-            border: 1px solid #eee;
-        }
-        .message{
-            margin: 20px;
-            padding: 5px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-            background: white;
 
-        }
-    </style>
 </head>
+
 <body>
-    <h1>chat con Socket.io y nodeJS</h1>
-    <div id="messages"></div>
-    <form onsubmit="return  addMessage(this);">
-    <input type="text" id="nickname" placeholder="Nick">
-    <textarea name="" id="text" cols="20" rows="10" placeholder="Mensaje..." onkeypress="pulsar(event)"></textarea>
-    <input type="submit" id="enviar" value="Enviar">
-    </form>
+    <div class="anchoMaximo">
+        <div class="contenedorChat">
+            <h1> Chat con NodeJS y Socket.io </h1>
+        <div id="messages"></div>
+        <form onsubmit="return  addMessage(this)" class="forMessages" id="formChat">
+            <input type="text" id="nickname" placeholder="ingresa tu alias" >
+            <span id="alerta">debes ingresar un Alias</span>
+            <div class="write">
+                <textarea name="" id="text" cols="20" rows="10" placeholder="Mensaje..."
+                onkeypress="pulsar(event)"></textarea>
+            <input type="submit" id="enviar" value="Enviar">
+            </div>  
+        </form>
+        </div>
+        
+    </div>
+    <script src="main.js"></script>
 </body>
+
 </html>
